@@ -88,19 +88,12 @@ iframe{
 	vertical-align: bottom;
 }
 	
-
-
-/* Basic Styles*/
-	body {
+body {
 		background: #ffffff;
 		font: 14px/22px "open_sans",Arial,sans-serif;
 		color: #777777;
-		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+		-webkit-font-smoothing: antialiased;
 		-webkit-text-size-adjust: 100%;
-		
-
-
-		
  }
 
 
