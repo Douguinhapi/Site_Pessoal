@@ -1,51 +1,49 @@
-.container-new{
-    margin: 100px 0 0 160px;
-    width: 2000px;
-    height: 500;
+.container-new {
+    margin: 100px auto;
+    width: 90%; /* Ajuste para que ocupe 90% da largura da tela */
+    max-width: 2000px; /* Limite de largura para telas grandes */
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
 }
-.container-new img{
-    width: 6%;
-    height: 100%;
+
+.container-new img {
+    width: 100px; /* Largura fixa para melhor controle em telas grandes e pequenas */
+    height: auto;
     object-fit: cover;
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.684);
-    transition: all ease-in-out 0.5s;
-}
-.container-new img:hover {
-    width: 8%;
+    transition: transform 0.5s ease-in-out;
 }
 
+.container-new img:hover {
+    transform: scale(1.1); /* Efeito suave ao passar o mouse */
+}
+
+/* Estilo para dispositivos médios */
 @media (max-width: 768px) {
     .container-new {
         margin: 20px auto;
-        width: 90%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center; /* Centraliza as imagens */
-    }
-
-    .container-new img {
-        width: 80%;
-        height: auto;
-        max-width: 200px; /* Define um limite para evitar que fiquem muito grandes */
-    }
-
-    .container-new img:hover {
-        width: 105%; /* Remove o aumento no hover */
-    }
-}
-
-@media (max-width: 480px) {
-    .container-new {
+        width: 400px; /* Ajusta para ocupar 100% da largura em dispositivos menores */
         gap: 15px;
     }
 
     .container-new img {
-        width: 100%;
-        max-width: 200px; 
+        width: 45%; /* Ajuste de largura para melhor preenchimento da tela */
+        max-width: 80px; /* Limite para imagens não ficarem grandes demais */
+    }
+}
+
+/* Estilo para dispositivos pequenos */
+@media (max-width: 480px) {
+    .container-new {
+        gap: 10px;
+    }
+
+    .container-new img {
+        width: 80px;
+        max-width: 180px; /* Limite para imagens em telas bem pequenas */
     }
 }
