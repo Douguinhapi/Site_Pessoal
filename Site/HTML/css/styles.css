@@ -1,49 +1,49 @@
 .container-new {
-    margin: 100px auto;
-    width: 90%; /* Ajuste para que ocupe 90% da largura da tela */
-    max-width: 2000px; /* Limite de largura para telas grandes */
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 10px;
+    padding: 0 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.container-new a:hover {
+    transform: scale(1.10);
 }
 
 .container-new img {
-    width: 100px; /* Largura fixa para melhor controle em telas grandes e pequenas */
+    width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.684);
-    transition: transform 0.5s ease-in-out;
+    border-radius: 8px;
+    transition: filter 0.2s ease;
 }
 
-.container-new img:hover {
-    transform: scale(1.1); /* Efeito suave ao passar o mouse */
+.container-new a:hover img {
+    filter: brightness(0.9);
 }
 
-/* Estilo para dispositivos médios */
+/* Responsividade */
 @media (max-width: 768px) {
-    .container-new {
-        margin: 20px auto;
-        width: 400px; /* Ajusta para ocupar 100% da largura em dispositivos menores */
-        gap: 15px;
+    .title {
+        font-size: 1.6rem;
     }
 
-    .container-new img {
-        width: 45%; /* Ajuste de largura para melhor preenchimento da tela */
-        max-width: 80px; /* Limite para imagens não ficarem grandes demais */
+    .container-new {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 8px;
+        padding: 0 0.5rem;
     }
 }
 
-/* Estilo para dispositivos pequenos */
 @media (max-width: 480px) {
-    .container-new {
-        gap: 10px;
+    .title {
+        font-size: 1.4rem;
     }
 
-    .container-new img {
-        width: 80px;
-        max-width: 180px; /* Limite para imagens em telas bem pequenas */
+    .container-new {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
     }
 }
